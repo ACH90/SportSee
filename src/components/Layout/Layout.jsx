@@ -8,11 +8,19 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.layout}>
       <header className={styles.topHeader}>
-        <img src={Logo} alt="" />
+        <img src={Logo} alt="Logo" />
+        <nav className={styles.topNav}>
+          <ul className={styles.menu}>
+            <li>Accueil</li>
+            <li>Profil</li>
+            <li>Réglage</li>
+            <li>Communauté</li>
+          </ul>
+        </nav>
       </header>
       <div className={styles.mainContent}>
         <nav className={styles.sideNav}>
-          <img src={Nav} alt="" />
+          <img src={Nav} alt="Nav-bar" className="nav" />
         </nav>
         <main className={styles.pageContent}>{children}</main>
       </div>
