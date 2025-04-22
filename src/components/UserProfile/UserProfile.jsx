@@ -1,6 +1,7 @@
 // src/components/UserProfile.jsx
 import React, { useEffect, useState } from "react";
 import { getUserData, getUserStats } from "../../services/userService";
+import styles from "./userProfile.module.css";
 
 const UserProfile = ({ userId }) => {
   const [user, setUser] = useState(null);
@@ -32,9 +33,15 @@ const UserProfile = ({ userId }) => {
     <div>
       {user && (
         <div>
-          <h1>
-            {user.userInfos.firstName} {user.userInfos.lastName}
-          </h1>
+          <header>
+            <h1>
+              Bonjour{" "}
+              <span className={styles.userName}>
+                {user.userInfos.firstName}
+              </span>
+              {/* {user.userInfos.lastName} */}
+            </h1>
+          </header>
           <p>Age: {user.userInfos.age}</p>
           <p>Calories: {stats ? stats.calorieCount : "Loading..."}</p>
           <p>Proteins: {stats ? stats.proteinCount : "Loading..."}</p>
