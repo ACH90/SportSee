@@ -1,6 +1,6 @@
 // src/components/UserProfile.jsx
 import React, { useEffect, useState } from "react";
-import { getUserData, getUserStats } from "../services/userService";
+import { getUserData, getUserStats } from "../../services/userService";
 
 const UserProfile = ({ userId }) => {
   const [user, setUser] = useState(null);

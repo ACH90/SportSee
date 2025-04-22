@@ -1,0 +1,48 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .topHeader {
+    height: 60px;
+    background-color: #020203;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .mainContent {
+    display: flex;
+    flex: 1;
+  }
+  
+  .sideNav {
+    width: 80px;
+    background-color: #020203;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  .sideNav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sideNav li {
+    margin: 20px 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+  
+  .pageContent {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+  

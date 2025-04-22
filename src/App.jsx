@@ -1,12 +1,13 @@
 // src/App.jsx
 import React from "react";
-import UserProfile from "./components/UserProfile";
+import Layout from "./components/Layout/Layout";
+import UserProfile from "./components/UserProfile/UserProfile";
 
 function App() {
   return (
-    <div className="App">
+    <Layout>
       <UserProfile userId={12} /> {/* tu peux tester avec 12 ou 18 */}
-    </div>
+    </Layout>
   );
 }
 
