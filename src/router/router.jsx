@@ -18,6 +18,4 @@ const router = createBrowserRouter([
   },
 ]);
 
-console.log("Router is set up with the following routes:", router);
-
 export default router;

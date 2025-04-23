@@ -6,7 +6,7 @@ import styles from "./userProfile.module.css";
 
 const UserProfile = () => {
   const { userId } = useParams(); // Récupère l'ID utilisateur depuis l'URL
-  console.log("ID utilisateur récupéré:", userId);
+  // console.log("ID utilisateur récupéré:", userId);
   const [user, setUser] = useState(null);
   const [stats, setStats] = useState(null);
   const [error, setError] = useState(null);
