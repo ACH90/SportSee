@@ -1,8 +1,8 @@
-// src/services/userService.js
 // import axios from "axios";
 
 // Si tu utilises un mock, on peut simuler la récupération des données ici
 import { USER_MAIN_DATA } from "../data/userMock";
+import { USER_ACTIVITY } from "../data/userMock";
 
 /**
  * Fonction pour récupérer les données d'un utilisateur.
@@ -48,6 +48,27 @@ export const getUserStats = async (userId) => {
       "Erreur lors de la récupération des statistiques utilisateur:",
       error
     );
+    throw error;
+  }
+};
+
+/**
+ * Fonction pour récupérer les données d’activité quotidienne
+ */
+export const getUserActivity = async (userId) => {
+  try {
+    // Simule un délai réseau
+    const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+    await delay(500);
+
+    const activityData = USER_ACTIVITY.find(
+      (entry) => entry.userId === parseInt(userId)
+    );
+    if (!activityData) throw new Error("Activité non trouvée");
+
+    return activityData.sessions; // on retourne juste les sessions
+  } catch (error) {
+    console.error("Erreur lors de la récupération de l’activité:", error);
     throw error;
   }
 };
