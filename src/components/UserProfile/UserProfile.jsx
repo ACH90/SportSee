@@ -1,9 +1,12 @@
 // src/components/UserProfile.jsx
 import React, { useEffect, useState } from "react";
-import { getUserData, getUserStats } from "../../services/userService";
+import { useParams } from "react-router-dom";
+import { getUserData, getUserStats } from "../../services/userService.js";
 import styles from "./userProfile.module.css";
 
-const UserProfile = ({ userId }) => {
+const UserProfile = () => {
+  const { userId } = useParams(); // Récupère l'ID utilisateur depuis l'URL
+  console.log("ID utilisateur récupéré:", userId);
   const [user, setUser] = useState(null);
   const [stats, setStats] = useState(null);
   const [error, setError] = useState(null);
@@ -39,7 +42,6 @@ const UserProfile = ({ userId }) => {
               <span className={styles.userName}>
                 {user.userInfos.firstName}
               </span>
-              {/* {user.userInfos.lastName} */}
             </h1>
           </header>
           <p>Age: {user.userInfos.age}</p>

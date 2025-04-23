@@ -17,7 +17,9 @@ export const getUserData = async (userId) => {
     await delay(500); // Simule un délai de 500ms
 
     // Chercher l'utilisateur par son ID dans le mock
-    const user = USER_MAIN_DATA.find((user) => user.id === userId);
+    const user = USER_MAIN_DATA.find(
+      (user) => user.id === parseInt(userId, 10)
+    );
 
     if (!user) {
       throw new Error("Utilisateur non trouvé");

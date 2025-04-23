@@ -1,35 +1,23 @@
+// src/router/Router.jsx
 import { createBrowserRouter } from "react-router-dom";
 // Pages
-import Home from "/src/pages/Home/Home.jsx";
-import NotFoundPage from "/src/pages/NotFoundPage/NotFoundPage.jsx";
-import APropos from "/src/pages/APropos/APropos.jsx";
-import Logement from "/src/pages/Logement/Logement.jsx";
+import UserProfile from "../components/UserProfile/UserProfile.jsx";
 // Layout
-import MainLayout from "/src/layouts/MainLayout.jsx";
+import Layout from "../Layout/Layout.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout />,
+    element: <Layout />,
     children: [
       {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "apropos",
-        element: <APropos />,
-      },
-      {
-        path: "logement/:id",
-        element: <Logement />,
-      },
-      {
-        path: "*",
-        element: <NotFoundPage />,
+        path: "user/:userId", // Relatif, sans "/"
+        element: <UserProfile />,
       },
     ],
   },
 ]);
+
+console.log("Router is set up with the following routes:", router);
 
 export default router;
