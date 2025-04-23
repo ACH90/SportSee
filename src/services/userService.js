@@ -10,6 +10,7 @@ import { USER_MAIN_DATA } from "../data/userMock";
  * pourra être adaptée pour effectuer un appel API réel.
  */
 export const getUserData = async (userId) => {
+  console.log("Recherche utilisateur pour ID:", userId);
   try {
     // Simuler un délai comme si c'était un appel API réel
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
