@@ -4,7 +4,7 @@ import styles from "./userProfile.module.css";
 
 const UserProfile = () => {
   const { userId } = useParams();
-  const { user, stats, loading, error } = useUserData(userId);
+  const { user, loading, error } = useUserData(userId);
 
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>{error}</div>;
@@ -27,10 +27,7 @@ const UserProfile = () => {
             </h1>
           </header>
           <p>Age: {user.userInfos.age}</p>
-          <p>Calories: {stats.calorieCount}</p>
-          <p>Proteins: {stats.proteinCount}</p>
-          <p>Carbohydrates: {stats.carbohydrateCount}</p>
-          <p>Lipids: {stats.lipidCount}</p>
+
           <p>Score: {scorePercentage} % de votre objectif</p>
         </div>
       )}
