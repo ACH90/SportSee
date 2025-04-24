@@ -31,7 +31,7 @@ const UserProfile = () => {
           <p>Proteins: {stats.proteinCount}</p>
           <p>Carbohydrates: {stats.carbohydrateCount}</p>
           <p>Lipids: {stats.lipidCount}</p>
-          <p>Score: {scorePercentage} %</p>
+          <p>Score: {scorePercentage} % de votre objectif</p>
         </div>
       )}
     </div>

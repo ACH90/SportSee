@@ -81,14 +81,18 @@ export const getUserAverageSessions = async (userId) => {
   }
 };
 
-export const getUserPerformance = async (userId) => {
+export const getUserPerf = async (userId) => {
   try {
     const performance = USER_PERFORMANCE.find(
       (entry) => entry.userId === parseInt(userId)
     );
     if (!performance) throw new Error("Performance non trouvée");
 
-    return performance.data; // on retourne juste les sessions
+    console.log("performance", performance);
+    return {
+      kind: performance.kind,
+      data: performance.data,
+    };
   } catch (error) {
     console.error("Erreur lors de la récupération de la performance:", error);
     throw error;
