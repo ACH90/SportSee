@@ -24,6 +24,9 @@ export default function useUserData(userId) {
 
     fetchData();
   }, [userId]);
-  console.log(user, stats);
+  console.log("Voici le user", user);
+  console.log("Voici les stats", stats);
+  // console.log("Voici keyData", user.keyData);
+  // console.log("Voici le score ", user.score);
   return { user, stats, loading, error };
 }

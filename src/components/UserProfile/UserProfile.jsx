@@ -9,6 +9,11 @@ const UserProfile = () => {
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>{error}</div>;
 
+  const score = user.todayScore ?? user.score; // on couvre les deux cas
+  // tranformer score en pourcentage
+  const scorePercentage = score * 100;
+  console.log("Voici le score ", scorePercentage);
+
   return (
     <div>
       {user && (
@@ -26,6 +31,7 @@ const UserProfile = () => {
           <p>Proteins: {stats.proteinCount}</p>
           <p>Carbohydrates: {stats.carbohydrateCount}</p>
           <p>Lipids: {stats.lipidCount}</p>
+          <p>Score: {scorePercentage} %</p>
         </div>
       )}
     </div>

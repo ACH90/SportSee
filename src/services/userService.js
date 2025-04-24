@@ -14,10 +14,6 @@ import { USER_AVERAGE_SESSIONS } from "../data/userMock";
 export const getUserData = async (userId) => {
   //   console.log("Recherche utilisateur pour ID:", userId);
   try {
-    // Simuler un délai comme si c'était un appel API réel
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    await delay(500); // Simule un délai de 500ms
-
     // Chercher l'utilisateur par son ID dans le mock
     const user = USER_MAIN_DATA.find(
       (user) => user.id === parseInt(userId, 10)
