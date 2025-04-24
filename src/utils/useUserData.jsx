@@ -24,6 +24,6 @@ export default function useUserData(userId) {
 
     fetchData();
   }, [userId]);
-
+  console.log(user, stats);
   return { user, stats, loading, error };
 }

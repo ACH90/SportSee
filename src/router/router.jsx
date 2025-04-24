@@ -5,7 +5,7 @@ import UserProfile from "../components/UserProfile/UserProfile.jsx";
 // Layout
 import Layout from "../Layout/Layout.jsx";
 import Activity from "../components/Activity/Activity.jsx";
-import AverageSession from "../components/AverageSession/AverageSession.jsx";
+import AverageSessions from "../components/AverageSessions/AverageSessions.jsx";
 import Perf from "../components/Perf/Perf.jsx";
 
 const router = createBrowserRouter([
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: "user/:userId/average-sessions",
-        element: <AverageSession />,
+        element: <AverageSessions />,
       },
       {
         path: "user/:userId/performance",
