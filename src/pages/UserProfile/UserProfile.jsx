@@ -11,6 +11,7 @@ const UserProfile = () => {
   const { data: user, loading, error } = useUserMain(userId); // juste userId ici
 
   console.log(user);
+  console.log("userId:", userId);
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>{error}</div>;
 
