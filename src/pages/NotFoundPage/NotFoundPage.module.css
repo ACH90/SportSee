@@ -1,0 +1,47 @@
+.notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.notFound h1 {
+    font-size: 288px;
+    color: #FF6060;
+    margin: 0px;
+
+    @media (max-width: 768px) {
+        font-size: 96px;
+    }
+}
+
+.h2Wrapper {
+    max-width: 872px;
+    text-align: center;
+    padding: 0 20px;
+  
+    @media (max-width: 768px) {
+      max-width: 300px;
+    }
+  }
+
+.notFound h2 {
+    font-size: 36px;
+    color: #FF6060;
+    margin: 0px;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+    }
+}
+
+.notFound p {
+    font-size: 18px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 139px;
+    cursor: pointer;
+}

@@ -1,18 +1,21 @@
 import { useParams } from "react-router-dom";
-import useUserData from "../../utils/useUserData";
 import styles from "./userProfile.module.css";
+import useUserMain from "/src/hooks/useUserMain"; // doit retourner uniquement les données "main"
+//Composants graphiques
+import Activity from "/src/components/Activity/Activity.jsx";
+import AverageSessions from "../../components/AverageSessions/AverageSessions";
+import Performance from "../../components/Performance/Performance";
 
 const UserProfile = () => {
   const { userId } = useParams();
-  const { user, loading, error } = useUserData(userId);
+  const { data: user, loading, error } = useUserMain(userId); // juste userId ici
 
+  console.log(user);
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>{error}</div>;
 
-  const score = user.todayScore ?? user.score; // on couvre les deux cas
-  // tranformer score en pourcentage
+  const score = user.todayScore ?? user.score;
   const scorePercentage = score * 100;
-  console.log("Voici le score ", scorePercentage);
 
   return (
     <div>
@@ -27,8 +30,12 @@ const UserProfile = () => {
             </h1>
           </header>
           <p>Age: {user.userInfos.age}</p>
-
           <p>Score: {scorePercentage} % de votre objectif</p>
+          <Activity />
+
+          <AverageSessions />
+
+          <Performance />
         </div>
       )}
     </div>

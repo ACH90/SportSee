@@ -1,0 +1,6 @@
+.radar-chart-container {
+    display: flex;
+    justify-content: center;
+    width: 258px;
+    height: 258px;
+}
