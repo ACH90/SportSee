@@ -3,6 +3,7 @@ import { fetchUserData } from "../utils/dataLoader"; // Import de la fonction fe
 
 const useUserPerformance = (userId) => {
   const [performance, setPerformance] = useState([]); // Renommé en "performance"
+  const [kind, setKind] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -11,7 +12,8 @@ const useUserPerformance = (userId) => {
       try {
         const data = await fetchUserData("performance", userId); // Récupération des données de performance
         if (data && Array.isArray(data.data)) {
-          setPerformance(data.data); // Assurez-vous que les données sont au bon format
+          setPerformance(data.data); // le tableau est dans data.data
+          setKind(data.kind); // le kind est dans data.kind
         } else {
           throw new Error("Données de performance mal formatées");
         }
@@ -27,7 +29,7 @@ const useUserPerformance = (userId) => {
     }
   }, [userId]);
 
-  return { performance, loading, error }; // On renvoie "performance" directement
+  return { performance, kind, loading, error }; // On renvoie "performance" directement
 };
 
 export default useUserPerformance;
