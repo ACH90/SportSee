@@ -19,7 +19,6 @@ const AverageSessions = () => {
 
   return (
     <div>
-      <h2>Activité moyenne</h2>
       {averageSessions.length > 0 ? (
         <ResponsiveContainer width={258} height={263}>
           <LineChart

@@ -29,7 +29,6 @@ const Performance = () => {
 
   return (
     <div>
-      <h2>Performance</h2>
       {formattedData.length > 0 ? (
         <div
           style={{

@@ -18,27 +18,31 @@ const UserProfile = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div>
-      {user && (
-        <div>
-          <header>
-            <h1>
-              Bonjour{" "}
-              <span className={styles.userName}>
-                {user.userInfos.firstName}
-              </span>
-            </h1>
-          </header>
-          <Score />
+    <div className={styles.userProfile}>
+      <div className={styles.gridContainer}>
+        <div className={styles.gridUserInfos}>
+          <h1>
+            Bonjour{" "}
+            <span className={styles.userName}>{user.userInfos.firstName}</span>
+          </h1>
+          <h2>Félicitation ! Vous avez explosé vos objectifs hier 👏</h2>
+        </div>
+        <div className={styles.gridActivity}>
           <Activity />
-
+        </div>
+        <div className={styles.gridKeyData}>
           <KeyData />
-
+        </div>
+        <div className={styles.gridAverageSessions}>
           <AverageSessions />
-
+        </div>
+        <div className={styles.gridPerformance}>
           <Performance />
         </div>
-      )}
+        <div className={styles.gridScore}>
+          <Score />
+        </div>
+      </div>
     </div>
   );
 };

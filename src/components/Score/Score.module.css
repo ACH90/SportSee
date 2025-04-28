@@ -1,0 +1,9 @@
+.scoreContainer{
+    display: flex;
+    justify-content: center;
+    width: 258px;
+    height: 258px;
+    background-color: #F0F0F0;
+    border-radius: 5px;
+    padding: 20px;
+}

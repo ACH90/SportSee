@@ -2,6 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useUserMain from "/src/hooks/useUserMain";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
+import styles from "./Score.module.css";
 
 const Score = () => {
   const { userId } = useParams();
@@ -12,7 +13,7 @@ const Score = () => {
 
   const score = user.todayScore ?? user.score;
   return (
-    <div>
+    <div className={styles.scoreContainer}>
       <ResponsiveContainer width={200} height={200}>
         <RadialBarChart
           innerRadius="70%" // Cercle intérieur (plus creusé)

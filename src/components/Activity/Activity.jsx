@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useUserActivity from "/src/hooks/useUserActivity";
+import styles from "./Activity.module.css";
 import {
   BarChart,
   Bar,
@@ -20,11 +21,11 @@ const Activity = () => {
 
   return (
     <div>
-      <h2>Activité quotidienne</h2>
-      <h3>BARCHART</h3>
       <div
-        style={{ width: "750px", height: "300px", backgroundColor: "#F0F0F0" }}
+        className={styles.activityContainer}
+        style={{ width: "835px", height: "320px", backgroundColor: "#F0F0F0" }}
       >
+        <h2>Activité quotidienne</h2>
         <ResponsiveContainer width={"100%"} height={250}>
           <BarChart
             data={activity}
