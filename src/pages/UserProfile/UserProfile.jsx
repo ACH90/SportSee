@@ -6,6 +6,7 @@ import Activity from "/src/components/Activity/Activity.jsx";
 import AverageSessions from "../../components/AverageSessions/AverageSessions";
 import Performance from "../../components/Performance/Performance";
 import Score from "../../components/Score/Score";
+import KeyData from "../../components/KeyData/KeyData";
 
 const UserProfile = () => {
   const { userId } = useParams();
@@ -30,6 +31,8 @@ const UserProfile = () => {
           </header>
           <Score />
           <Activity />
+
+          <KeyData />
 
           <AverageSessions />
 
