@@ -5,6 +5,7 @@ import useUserMain from "/src/hooks/useUserMain"; // doit retourner uniquement l
 import Activity from "/src/components/Activity/Activity.jsx";
 import AverageSessions from "../../components/AverageSessions/AverageSessions";
 import Performance from "../../components/Performance/Performance";
+import Score from "../../components/Score/Score";
 
 const UserProfile = () => {
   const { userId } = useParams();
@@ -14,9 +15,6 @@ const UserProfile = () => {
   console.log("userId:", userId);
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>{error}</div>;
-
-  const score = user.todayScore ?? user.score;
-  const scorePercentage = score * 100;
 
   return (
     <div>
@@ -30,8 +28,7 @@ const UserProfile = () => {
               </span>
             </h1>
           </header>
-          <p>Age: {user.userInfos.age}</p>
-          <p>Score: {scorePercentage} % de votre objectif</p>
+          <Score />
           <Activity />
 
           <AverageSessions />
