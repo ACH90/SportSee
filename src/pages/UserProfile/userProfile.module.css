@@ -12,12 +12,10 @@
     grid-template-columns: repeat(4, 1fr);
     /* 4 colonnes égales */
     grid-template-rows: repeat(3, auto);
-    /* 2 lignes égales */
-    gap: 20px;
-    /* Espace entre les items */
+    /* justify-content: center;
+    align-items: center; */
     width: 100%;
-    max-width: 1200px;
-    /* Limite la largeur maximale */
+    max-width: 1440px;
 }
 
 .userName {
@@ -35,6 +33,7 @@ font-weight: 400;
 font-size: 18px;
 line-height: 24px;
 letter-spacing: 0px;
+padding-bottom: 40px;
 }
 
 .gridKeyData {
