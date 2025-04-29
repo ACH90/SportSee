@@ -57,30 +57,28 @@ const Performance = () => {
             width: "258px",
           }}
         >
-          <ResponsiveContainer width="100%" height={263}>
-            <RadarChart
-              cx="50%"
-              cy="50%"
-              outerRadius="70%"
-              data={formattedData}
-            >
-              <PolarGrid
-                gridType="polygon"
-                radialLines={false}
-                strokeWidth={2}
-              />
-              <PolarAngleAxis dataKey="subject" tick={<CustomizedTick />} />
-              <PolarRadiusAxis axisLine={false} tick={false} tickLine={false} />
-              <Radar
-                name="Perf"
-                dataKey="value"
-                stroke="none"
-                fill="rgba(255, 1, 1, 0.70)"
-                fillOpacity={0.9}
-              />
-              <Tooltip />
-            </RadarChart>
-          </ResponsiveContainer>
+          {/* <ResponsiveContainer width="100%" height={263}> */}
+          <RadarChart
+            cx="50%"
+            cy="50%"
+            outerRadius="70%"
+            data={formattedData}
+            width={258}
+            height={263}
+          >
+            <PolarGrid gridType="polygon" radialLines={false} strokeWidth={2} />
+            <PolarAngleAxis dataKey="subject" tick={<CustomizedTick />} />
+            <PolarRadiusAxis axisLine={false} tick={false} tickLine={false} />
+            <Radar
+              name="Perf"
+              dataKey="value"
+              stroke="none"
+              fill="rgba(255, 1, 1, 0.70)"
+              fillOpacity={0.9}
+            />
+            <Tooltip />
+          </RadarChart>
+          {/* </ResponsiveContainer> */}
         </div>
       ) : (
         <p>Aucune donnée de performance disponible</p>

@@ -39,70 +39,70 @@ const Activity = () => {
         className={styles.activityContainer}
         style={{ width: "835px", height: "320px", backgroundColor: "#F0F0F0" }}
       >
-        <ResponsiveContainer width={"100%"} height={250}>
-          <h2>Activité quotidienne</h2>
-          <BarChart
-            data={activity}
-            barGap={12}
-            barSize={8}
-            margin={{ top: 50, right: 30, left: 20, bottom: 5 }}
-            width={702}
-            height={250}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            {/* Afficher le numéro du jour sur l'axe X */}
-            <XAxis
-              dataKey="day"
-              tickFormatter={(day) => new Date(day).getDate()}
-              axisLine={false}
-              tickLine={false}
-            />
-            <YAxis
-              yAxisId="left"
-              orientation="left"
-              hide
-              axisLine={false}
-              tickLine={false}
-            />
-            <YAxis
-              yAxisId="right"
-              orientation="right"
-              axisLine={false}
-              tickLine={false}
-            />
-            <Tooltip content={<CustomTooltip />} />
-            <Legend
-              verticalAlign="top"
-              align="right"
-              iconType="circle"
-              iconSize={8}
-              wrapperStyle={{
-                paddingBottom: "40px", // ← pousse le BarChart vers le bas
-                fontSize: "1rem",
-              }}
-            />
-            {/* Poids (kg) */}
-            <Bar
-              yAxisId="left"
-              dataKey="kilogram"
-              unit="kg"
-              name="Poids (kg)"
-              fill="#282D30"
-              radius={[10, 10, 0, 0]}
-              barSize={7}
-            />
-            {/* Calories brûlées */}
-            <Bar
-              yAxisId="right"
-              dataKey="calories"
-              unit="kCal"
-              name="Calories brûlées (kCal)"
-              fill="#E60000"
-              radius={[10, 10, 0, 0]}
-              barSize={7}
-            />
-          </BarChart>
-        </ResponsiveContainer>
+        {/* <ResponsiveContainer width={"100%"} height={250}> */}
+        <h2>Activité quotidienne</h2>
+        <BarChart
+          data={activity}
+          barGap={12}
+          barSize={8}
+          margin={{ top: 50, right: 30, left: 20, bottom: 5 }}
+          width={835}
+          height={250}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          {/* Afficher le numéro du jour sur l'axe X */}
+          <XAxis
+            dataKey="day"
+            tickFormatter={(day) => new Date(day).getDate()}
+            axisLine={false}
+            tickLine={false}
+          />
+          <YAxis
+            yAxisId="left"
+            orientation="left"
+            hide
+            axisLine={false}
+            tickLine={false}
+          />
+          <YAxis
+            yAxisId="right"
+            orientation="right"
+            axisLine={false}
+            tickLine={false}
+          />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend
+            verticalAlign="top"
+            align="right"
+            iconType="circle"
+            iconSize={8}
+            wrapperStyle={{
+              paddingBottom: "40px", // ← pousse le BarChart vers le bas
+              fontSize: "1rem",
+            }}
+          />
+          {/* Poids (kg) */}
+          <Bar
+            yAxisId="left"
+            dataKey="kilogram"
+            unit="kg"
+            name="Poids (kg)"
+            fill="#282D30"
+            radius={[10, 10, 0, 0]}
+            barSize={7}
+          />
+          {/* Calories brûlées */}
+          <Bar
+            yAxisId="right"
+            dataKey="calories"
+            unit="kCal"
+            name="Calories brûlées (kCal)"
+            fill="#E60000"
+            radius={[10, 10, 0, 0]}
+            barSize={7}
+          />
+        </BarChart>
+        {/* </ResponsiveContainer> */}
       </div>
     </div>
   );
