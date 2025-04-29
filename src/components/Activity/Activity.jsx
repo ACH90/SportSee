@@ -39,8 +39,8 @@ const Activity = () => {
         className={styles.activityContainer}
         style={{ width: "835px", height: "320px", backgroundColor: "#F0F0F0" }}
       >
-        <h2>Activité quotidienne</h2>
         <ResponsiveContainer width={"100%"} height={250}>
+          <h2>Activité quotidienne</h2>
           <BarChart
             data={activity}
             barGap={12}
@@ -70,7 +70,7 @@ const Activity = () => {
               axisLine={false}
               tickLine={false}
             />
-            <Tooltip />
+            <Tooltip content={<CustomTooltip />} />
             <Legend
               verticalAlign="top"
               align="right"
@@ -85,6 +85,7 @@ const Activity = () => {
             <Bar
               yAxisId="left"
               dataKey="kilogram"
+              unit="kg"
               name="Poids (kg)"
               fill="#282D30"
               radius={[10, 10, 0, 0]}
@@ -94,6 +95,7 @@ const Activity = () => {
             <Bar
               yAxisId="right"
               dataKey="calories"
+              unit="kCal"
               name="Calories brûlées (kCal)"
               fill="#E60000"
               radius={[10, 10, 0, 0]}
@@ -105,5 +107,42 @@ const Activity = () => {
     </div>
   );
 };
+
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div
+        className={styles.customTooltip}
+        style={{ transform: "translateY(-50px)" }}
+      >
+        {payload.map(({ value, unit }, index) => (
+          <p key={index}>
+            {value}
+            {unit}
+          </p>
+        ))}
+      </div>
+    );
+  }
+
+  return null;
+};
+
+// function ActivityCustomTooltip({ payload, active }) {
+//   if (active) {
+//     return (
+//       <div className="tooltip">
+//         {payload.map(({ value, unit }, index) => (
+//           <p key={index}>
+//             {value}
+//             {unit}
+//           </p>
+//         ))}
+//       </div>
+//     );
+//   }
+
+//   return null;
+// }
 
 export default Activity;
