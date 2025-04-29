@@ -8,6 +8,26 @@ import Performance from "../../components/Performance/Performance";
 import Score from "../../components/Score/Score";
 import KeyData from "../../components/KeyData/KeyData";
 
+/**
+ * Composant `UserProfile`
+ *
+ * Ce composant affiche le profil d'un utilisateur avec des informations détaillées sur ses performances et son activité.
+ * Il récupère les données de l'utilisateur à partir de l'API en utilisant le hook `useUserMain`.
+ *
+ * Il inclut plusieurs sous-composants pour afficher :
+ * - Le nom de l'utilisateur et un message personnalisé
+ * - Les données d'activité
+ * - Les données clés (ex : calories, protéines, etc.)
+ * - La moyenne des sessions d'entraînement
+ * - La performance de l'utilisateur
+ * - Le score global de l'utilisateur
+ *
+ * Les données de l'utilisateur sont récupérées via l'ID de l'utilisateur, qui est extrait de l'URL via le hook `useParams`.
+ * En cas de chargement, un message de chargement est affiché, et en cas d'erreur, un message d'erreur est retourné.
+ *
+ * @component
+ */
+
 const UserProfile = () => {
   const { userId } = useParams();
   const { data: user, loading, error } = useUserMain(userId); // juste userId ici

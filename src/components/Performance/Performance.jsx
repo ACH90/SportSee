@@ -33,7 +33,7 @@ const Performance = () => {
   const { userId } = useParams(); // Récupération de l'ID utilisateur depuis les paramètres de l'URL
   const { performance, kind, loading, error } = useUserPerformance(userId); // Hook pour récupérer les données de performance
 
-  console.log("performance", performance);
+  // console.log("performance", performance);
   function formatData(data) {
     const formattedData = data.map((stat) => ({
       subject: kind[stat.kind], // on récupère le nom associé au chiffre
