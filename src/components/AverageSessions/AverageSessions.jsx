@@ -10,9 +10,26 @@ import {
   YAxis,
 } from "recharts";
 
+/**
+ * Composant `AverageSessions` – Affiche la durée moyenne des sessions de l'utilisateur sous forme de graphique linéaire.
+ *
+ * Le composant récupère les données d'activité moyenne de l'utilisateur via le hook `useUserAverageSessions`.
+ * Les données sont affichées dans un graphique en ligne (utilisant `Recharts`), où chaque ligne représente la durée moyenne d'une session par jour.
+ *
+ * Si les données sont en cours de chargement, un message de chargement est affiché. En cas d'erreur, un message d'erreur est montré.
+ * Si les données ne sont pas disponibles, un message indiquant l'absence de données est affiché.
+ *
+ * Le graphique inclut :
+ * - La durée des sessions (`sessionLength` en minutes) sur l'axe Y.
+ * - Le jour de la semaine (`day`) sur l'axe X.
+ * - Un dégradé de couleur pour la ligne du graphique.
+ *
+ * @component
+ */
+
 const AverageSessions = () => {
-  const { userId } = useParams(); // Récupération de l'ID utilisateur depuis les paramètres de l'URL
-  const { averageSessions, loading, error } = useUserAverageSessions(userId); // Hook pour récupérer les données d'activité moyenne
+  const { userId } = useParams();
+  const { averageSessions, loading, error } = useUserAverageSessions(userId);
 
   if (loading) return <div>Chargement...</div>;
   if (error) return <div>{error}</div>;
@@ -71,10 +88,7 @@ const AverageSessions = () => {
               fontSize="1.2rem"
               fontWeight={500}
             />
-            <Tooltip
-            // content={<AverageCustomTooltip />}
-            // cursor={<AverageCustomCursor />}
-            />
+            <Tooltip />
           </LineChart>
         </ResponsiveContainer>
       ) : (

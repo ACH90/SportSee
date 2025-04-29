@@ -12,6 +12,21 @@ import {
   Legend,
   Rectangle,
 } from "recharts";
+
+/**
+ * Composant `Activity` – Affiche l'activité physique quotidienne de l'utilisateur sous forme de graphique à barres.
+ *
+ * Les données sont récupérées via le hook `useUserActivity` en fonction de l'ID utilisateur extrait de l'URL.
+ *
+ * Utilise Recharts pour afficher :
+ * - Le poids (en kg)
+ * - Les calories brûlées (en kCal)
+ *
+ * Affiche un état de chargement ou d'erreur en fonction de la requête.
+ *
+ * @component
+ */
+
 const Activity = () => {
   const { userId } = useParams(); // Récupération de l'ID utilisateur depuis les paramètres de l'URL
   const { activity, loading, error } = useUserActivity(userId); // Hook pour récupérer les données d'activité

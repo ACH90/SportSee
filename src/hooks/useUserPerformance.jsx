@@ -1,6 +1,18 @@
 import { useState, useEffect } from "react";
 import { fetchUserData } from "../utils/dataLoader"; // Import de la fonction fetchUserData
 
+/**
+ * Hook personnalisé pour récupérer les données de performance d’un utilisateur.
+ *
+ * @param {number} userId - ID de l'utilisateur.
+ * @returns {{
+ *   performance: Array<object>,   // Liste des performances par type
+ *   kind: object,                 // Dictionnaire des types de performance
+ *   loading: boolean,            // Indique si les données sont en cours de chargement
+ *   error: string|null           // Message d’erreur en cas de problème
+ * }} Données de performance de l'utilisateur.
+ */
+
 const useUserPerformance = (userId) => {
   const [performance, setPerformance] = useState([]); // Renommé en "performance"
   const [kind, setKind] = useState({});

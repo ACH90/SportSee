@@ -8,6 +8,21 @@ import Lipids from "/src/assets/fat-icon.png";
 //Styles
 import styles from "./KeyData.module.css";
 
+/**
+ * Composant `KeyData` – Affiche les données clés de l'utilisateur liées aux nutriments.
+ *
+ * Ce composant récupère les données de l'utilisateur via le hook `useUserKeyData`, qui contient des informations sur les calories,
+ * les protéines, les glucides et les lipides. Ces données sont affichées sous forme de cartes avec des icônes représentant chaque nutriment.
+ *
+ * Si les données sont en cours de chargement, un message de chargement est affiché. En cas d'erreur, un message d'erreur est montré.
+ * Chaque élément affiche :
+ * - Une icône représentant le nutriment (calories, protéines, glucides, lipides)
+ * - La quantité de chaque nutriment en grammes
+ * - Le nom du nutriment (calories, protéines, glucides, lipides)
+ *
+ * @component
+ */
+
 const KeyData = () => {
   const { userId } = useParams(); // Récupération de l'ID utilisateur depuis les paramètres de l'URL
   const { stats, loading, error } = useUserKeyData(userId); // Hook pour récupérer les données de performance

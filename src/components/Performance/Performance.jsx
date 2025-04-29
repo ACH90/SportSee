@@ -10,6 +10,25 @@ import {
   Tooltip,
 } from "recharts";
 
+/**
+ * Composant `Performance` – Affiche les données de performance de l'utilisateur sous forme de graphique radar.
+ *
+ * Ce composant utilise le hook `useUserPerformance` pour récupérer les données de performance de l'utilisateur et les afficher sous
+ * forme de graphique radar avec des axes représentant différentes mesures de performance (par exemple, force, endurance, etc.).
+ * Les données sont formatées avant d'être passées au composant `RadarChart` de la bibliothèque `recharts`.
+ *
+ * - Le graphique est affiché si des données de performance sont disponibles.
+ * - Un message de chargement est affiché pendant le chargement des données.
+ * - Si les données sont indisponibles ou en cas d'erreur, un message d'erreur est montré.
+ *
+ * Le graphique comprend :
+ * - Des axes représentant différentes catégories de performance.
+ * - Un remplissage coloré sous le graphique pour visualiser les valeurs.
+ * - Un tooltip pour afficher les informations des points du graphique.
+ *
+ * @component
+ */
+
 const Performance = () => {
   const { userId } = useParams(); // Récupération de l'ID utilisateur depuis les paramètres de l'URL
   const { performance, kind, loading, error } = useUserPerformance(userId); // Hook pour récupérer les données de performance
@@ -78,7 +97,6 @@ const CustomizedTick = ({ x, y, cx, cy, payload }) => {
       textAnchor="middle"
       fill="#fff" // Couleur blanche pour le texte
       fontSize={12} // Taille de police
-      // fontWeight="bold" // Police plus épaisse
     >
       {payload.value}
     </text>

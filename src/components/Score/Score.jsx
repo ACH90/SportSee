@@ -4,6 +4,21 @@ import useUserMain from "/src/hooks/useUserMain";
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import styles from "./Score.module.css";
 
+/**
+ * Composant `Score` – Affiche le score de l'utilisateur sous forme de graphique radial.
+ *
+ * Ce composant récupère les données de score de l'utilisateur via le hook `useUserMain`, qui utilise l'ID utilisateur extrait
+ * des paramètres de l'URL. Il affiche un graphique radial représentant le score de l'utilisateur par rapport à son objectif
+ * avec des valeurs allant de 0 à 100%.
+ *
+ * - Le score est affiché sous forme de cercle avec un remplissage dynamique représentant la progression de l'utilisateur.
+ * - Un texte au centre du graphique affiche le score en pourcentage ainsi qu'une légende indiquant "de votre objectif".
+ * - Un cercle blanc est affiché en arrière-plan pour compléter le graphique.
+ * - Le composant gère l'état de chargement et d'erreur.
+ *
+ * @component
+ */
+
 const Score = () => {
   const { userId } = useParams();
   const { data: user, loading, error } = useUserMain(userId); // juste userId ici

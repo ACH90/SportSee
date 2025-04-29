@@ -1,7 +1,20 @@
-// Pour activer ou désactiver l'utilisation du mock
+/**
+ * Récupère les données utilisateur soit depuis les mocks locaux soit depuis une API distante.
+ *
+ * @async
+ * @function fetchUserData
+ * @param {string} type - Le type de données à charger. Peut être "main", "activity", "average" ou "performance".
+ * @param {number} userId - L'identifiant de l'utilisateur pour lequel récupérer les données.
+ * @returns {Promise<Object>} Une promesse résolue avec les données utilisateur correspondantes.
+ * @throws {Error} Lance une erreur si le type est inconnu ou si la requête API échoue.
+ *
+ * @example
+ * const data = await fetchUserData("main", 12);
+ * console.log(data);
+ */
+
 const useMock = false;
 
-// Imports des données mockées (en .js)
 import {
   USER_MAIN_DATA,
   USER_ACTIVITY,
@@ -12,7 +25,6 @@ import {
 // Fonction utilitaire GET (mock ou API)
 export async function fetchUserData(type, userId) {
   if (useMock) {
-    // Récupération depuis les mocks
     switch (type) {
       case "main":
         return USER_MAIN_DATA.find((user) => user.id === Number(userId));
@@ -55,7 +67,7 @@ export async function fetchUserData(type, userId) {
         throw new Error("Erreur de requête API");
       }
       const data = await response.json();
-      return data.data; // ou juste data selon le format de l'API
+      return data.data;
     } catch (err) {
       throw new Error("Erreur de chargement depuis l’API : " + err.message);
     }

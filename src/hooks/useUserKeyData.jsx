@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { fetchUserData } from "../utils/dataLoader";
 
+/**
+ * Hook personnalisé pour récupérer les données clés (keyData) d'un utilisateur via l'API ou le mock.
+ *
+ * @param {number} userId - ID de l'utilisateur.
+ * @returns {{ stats: object|null, loading: boolean, error: string|null }} - Données statistiques (keyData), état de chargement et erreur éventuelle.
+ */
+
 const useUserKeyData = (userId) => {
   const [stats, setStats] = useState(null); // État pour stocker les statistiques
   const [loading, setLoading] = useState(true);
