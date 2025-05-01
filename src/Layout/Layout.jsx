@@ -21,7 +21,10 @@ const Layout = () => {
       </header>
       <div className={styles.mainContent}>
         <nav className={styles.sideNav}>
-          <img src={Nav} alt="Nav-bar" className="nav" />
+          <div className={styles.navWrapper}>
+            <img src={Nav} alt="Nav-bar" className={styles.navImage} />
+          </div>
+          <p className={styles.copyRight}>Copyright SportSee 2020</p>
         </nav>
         <main className={styles.pageContent}>
           <Outlet />
