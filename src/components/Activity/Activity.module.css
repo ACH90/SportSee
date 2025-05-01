@@ -6,8 +6,9 @@
 } */
 
 .activityContainer h2 {
+    position: absolute;
     margin-left : 20px;
-    padding-top: 20px;
+    padding-top: 30px;
 
 font-weight: 500;
 font-size: 15px;
