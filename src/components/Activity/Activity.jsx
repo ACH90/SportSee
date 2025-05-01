@@ -44,7 +44,7 @@ const Activity = () => {
           <BarChart
             data={activity}
             barGap={12}
-            margin={{ top: 50, right: 30, left: 30, bottom: 5 }}
+            margin={{ top: 40, right: 30, left: 30, bottom: 20 }}
           >
             <CartesianGrid strokeDasharray="3 3" />
             {/* Afficher le numéro du jour sur l'axe X horizontal */}
@@ -74,7 +74,7 @@ const Activity = () => {
               iconType="circle"
               iconSize={8}
               wrapperStyle={{
-                paddingBottom: "40px", // ← pousse le BarChart vers le bas
+                paddingBottom: "70px", // ← pousse le BarChart vers le bas
                 fontSize: "1rem",
               }}
             />
