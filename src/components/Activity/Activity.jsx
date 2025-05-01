@@ -44,13 +44,10 @@ const Activity = () => {
           <BarChart
             data={activity}
             barGap={12}
-            // barSize={8}
             margin={{ top: 50, right: 30, left: 30, bottom: 5 }}
-            // width={835}
-            // height={250}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            {/* Afficher le numéro du jour sur l'axe X */}
+            {/* Afficher le numéro du jour sur l'axe X horizontal */}
             <XAxis
               dataKey="day"
               tickFormatter={(day) => new Date(day).getDate()}
@@ -77,8 +74,7 @@ const Activity = () => {
               iconType="circle"
               iconSize={8}
               wrapperStyle={{
-                paddingBottom: "40px",
-                // ← pousse le BarChart vers le bas
+                paddingBottom: "40px", // ← pousse le BarChart vers le bas
                 fontSize: "1rem",
               }}
             />
@@ -128,22 +124,5 @@ const CustomTooltip = ({ active, payload }) => {
 
   return null;
 };
-
-// function ActivityCustomTooltip({ payload, active }) {
-//   if (active) {
-//     return (
-//       <div className="tooltip">
-//         {payload.map(({ value, unit }, index) => (
-//           <p key={index}>
-//             {value}
-//             {unit}
-//           </p>
-//         ))}
-//       </div>
-//     );
-//   }
-
-//   return null;
-// }
 
 export default Activity;
