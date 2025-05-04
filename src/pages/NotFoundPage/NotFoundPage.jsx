@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styles from "./NotFoundPage.module.css";
 const NotFoundPage = () => {
   return (
@@ -7,9 +6,9 @@ const NotFoundPage = () => {
       <div className={styles.h2Wrapper}>
         <h2>Oups! La page que vous demandez n'existe pas.</h2>
       </div>
-      <Link to="/">
+      {/* <Link to="/">
         <p>Retourner sur la page d’accueil</p>
-      </Link>
+      </Link> */}
     </div>
   );
 };
